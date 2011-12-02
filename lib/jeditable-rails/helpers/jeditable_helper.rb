@@ -10,6 +10,10 @@ module JeditableHelper
     end
   end
 
+  def jeditable_args(args)
+    "{#{args.collect {|key,value| (key==:callback) ? "#{key}:#{value}" : "#{key}:'#{value}'"}.join(',')}}"
+  end
+  
   # Creates an editable span for the given property of the given object.
   #
   # === Options
@@ -26,7 +30,6 @@ module JeditableHelper
     name = "#{object.class.to_s.underscore}[#{property}]"
     value = object.send property
     update_url = options.delete(:update_url) || url_for(object)
-    callback = options.delete(:callback)
     args = {:method => 'PUT', :name => name}.merge(options)
     js = <<-END
       <span class="editable" data-id="#{object.id}" data-name="#{name}">#{value}</span>
@@ -42,8 +45,7 @@ module JeditableHelper
                 .replace(/&quot;/gi, "\\\"");
               return retval;
             }};
-            $.extend(args, #{args.to_json});
-            #{"$.extend(args, #{callback});" if callback}
+            $.extend(args, #{jeditable_args(args)});
             $(".editable[data-id='#{object.id}'][data-name='#{name}']").editable("#{update_url}", args);
           });
         })( jQuery );
