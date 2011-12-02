@@ -20,16 +20,14 @@ Gem::Specification.new do |s|
     ".document",
     "CHANGELOG.markdown",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
     "Rakefile",
     "VERSION",
     "jeditable-rails.gemspec",
     "lib/jeditable-rails.rb",
     "lib/jeditable-rails/base.rb",
     "lib/jeditable-rails/helpers/jeditable_helper.rb",
-    "spec/jeditable-rails_spec.rb",
+    "spec/helpers/jeditable-rails_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/afeld/jeditable-rails}
