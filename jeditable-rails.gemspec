@@ -13,8 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{An edit-in-place gem that uses the JEditable jQuery plugin to post updates to the server via AJAX.}
   s.email = %q{aidan.feldman@gmail.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt",
-    "README.rdoc"
+    "LICENSE.txt"
   ]
   s.files = [
     ".document",
@@ -27,7 +26,6 @@ Gem::Specification.new do |s|
     "lib/jeditable-rails.rb",
     "lib/jeditable-rails/base.rb",
     "lib/jeditable-rails/helpers/jeditable_helper.rb",
-    "spec/helpers/jeditable-rails_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/afeld/jeditable-rails}
@@ -36,7 +34,6 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.5.0}
   s.summary = %q{An edit-in-place gem for Rails 3}
   s.test_files = [
-    "spec/jeditable-rails_spec.rb",
     "spec/spec_helper.rb"
   ]
 
